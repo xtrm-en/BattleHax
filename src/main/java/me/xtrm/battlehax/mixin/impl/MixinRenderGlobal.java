@@ -17,25 +17,25 @@ public class MixinRenderGlobal {
 
 	@Overwrite
 	private boolean isOutlineActive(Entity entityIn, Entity viewer, ICamera camera) {		
-		boolean flag = viewer instanceof EntityLivingBase && ((EntityLivingBase)viewer).isPlayerSleeping();
+	        boolean flag = viewer instanceof EntityLivingBase && ((EntityLivingBase)viewer).isPlayerSleeping();
 
-        if (entityIn == viewer && Wrapper.mc.gameSettings.thirdPersonView == 0 && !flag)
-        {
-        	return false;
-        }
-        else if (entityIn.isGlowing())
-        {
-            return true;
-        }
-        else if (Wrapper.mc.player.isSpectator() && Wrapper.mc.gameSettings.keyBindSpectatorOutlines.isKeyDown() && entityIn instanceof EntityPlayer)
-        {
-            return entityIn.ignoreFrustumCheck || camera.isBoundingBoxInFrustum(entityIn.getEntityBoundingBox()) || entityIn.isRidingOrBeingRiddenBy(Wrapper.mc.player);
-        }
-        else
-        {
-        	if(BattleHax.getInstance() == null) return false;
-            return BattleHax.getInstance().getMasterManager().getModuleManager().getModule(ShaderESP.class).getState();
-        }
+	        if (entityIn == viewer && Wrapper.mc.gameSettings.thirdPersonView == 0 && !flag)
+	        {
+	                return false;
+	        }
+	        else if (entityIn.isGlowing())
+	        {
+	                return true;
+	        }
+	        else if (Wrapper.mc.player.isSpectator() && Wrapper.mc.gameSettings.keyBindSpectatorOutlines.isKeyDown() && entityIn instanceof EntityPlayer)
+	        {
+	                return entityIn.ignoreFrustumCheck || camera.isBoundingBoxInFrustum(entityIn.getEntityBoundingBox()) || entityIn.isRidingOrBeingRiddenBy(Wrapper.mc.player);
+	        }
+	        else
+	        {
+	                if(BattleHax.getInstance() == null) return false;
+	                return BattleHax.getInstance().getMasterManager().getModuleManager().getModule(ShaderESP.class).getState();
+	        }
 	}
 	
 }
