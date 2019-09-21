@@ -1,0 +1,15 @@
+{
+    "required": true,
+    "package": "me.xtrm.battlehax.mixin.impl",
+    "refmap": "mixins.battlehax.refmap.json",
+    "compatibilityLevel": "JAVA_8",
+    "mixins": [
+    	"MixinEntity",
+    	"MixinEntityPlayerSP",
+    	"MixinGuiIngame",
+		"MixinPlayerControllerMP",
+    	"MixinGuiSpectator",    
+        "MixinMinecraft",
+        "MixinRenderGlobal"
+    ]
+}
