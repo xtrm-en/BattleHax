@@ -3,6 +3,7 @@ A BattleFields Client. Made for fun (&amp; idk what) in 3 days
 
 # Creditz
 Made by xTrM_ & FurYzen_
+EventManager by DarkMagician
 
 # State
 Discontinued. Only here for testing purposes.
